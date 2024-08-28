@@ -10,7 +10,7 @@ void setup()
 
 void loop()
 {
-    if ((digitalRead(fire_sensor)==true) && (analogRead(smoke_sensor)>250))
+    if ((digitalRead(fire_sensor)==true) || (analogRead(smoke_sensor)>250))
     {
         Serial.print("fire and smoke detected");
         digitalWrite(buzzer, HIGH);
