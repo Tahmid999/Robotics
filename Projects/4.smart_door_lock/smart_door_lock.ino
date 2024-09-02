@@ -28,12 +28,17 @@ int pass_length = 5;
 const String system_pass = "A1121"; //main pass
 String input_pass = "";
 
+//-------------LIGHT FEATURE--------------------
+int red =4;
+int green = 3;
 
 void setup()
 {
     lcd.init();
     lcd.backlight();
     Serial.begin(9600);
+    pinMode(red, OUTPUT);
+  	pinMode(green, OUTPUT);
 }
 
 void loop()
@@ -61,6 +66,7 @@ void loop()
                     lcd.clear();
                     lcd.setCursor(4,0);
                     lcd.print("Door Open");
+                    digitalWrite(green, HIGH);
                     delay(4000);
                     input_pass = ""; //reset pass
                     break;
@@ -70,6 +76,7 @@ void loop()
                     lcd.clear();
                     lcd.setCursor(3,0);
                     lcd.print("Wrong Pass");
+                    digitalWrite(red, HIGH);
                     delay(3000);
                     input_pass = ""; //reset pass
                     break;
@@ -82,6 +89,8 @@ void loop()
     lcd.clear();
     lcd.setCursor(2,0);
     lcd.print("Door Closed!");
+    digitalWrite(green, LOW);
+  	digitalWrite(red, LOW);
     delay(3000);
     
 }
