@@ -31,7 +31,7 @@ String input_pass = "";
 //-------------LIGHT FEATURE--------------------
 int red =4;
 int green = 3;
-
+//i can use a solenoidal lock system
 void setup()
 {
     lcd.init();
