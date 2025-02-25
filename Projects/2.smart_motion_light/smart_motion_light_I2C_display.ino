@@ -6,8 +6,8 @@ const int pir_sensor = 3;	/* PIR sensor O/P pin */
 const int relay = 2;
 int sensor_output = 0;
 
-bool print1 = false; // to print a particular promt for one time each of condition in void loop()
-bool print2 = false; // to print a particular promt for one time each of condition in void loop()
+bool print1 = false; // to print a particular prompt for one time each of condition in void loop()
+bool print2 = false; // to print a particular prompt for one time each of condition in void loop()
 
 void setup() {
 
@@ -59,7 +59,7 @@ void loop() {
         print1 = true; // in next itration previous countdown will not print again
       }
         
-    print2 = false; // to run the promt agian for one time
+    print2 = false; // to run the prompt agian for one time
   }
 
 
@@ -78,10 +78,10 @@ void loop() {
       lcd.print("Light ON");
       digitalWrite(relay, LOW);
       delay(2000);
-      print2 = true; // in next itration previous promt will not print again
+      print2 = true; // in next itration previous prompt will not print again
     }
 
-    print1 = false; // to run the promt agian for one time
+    print1 = false; // to run the prompt agian for one time
 
   }  
   
